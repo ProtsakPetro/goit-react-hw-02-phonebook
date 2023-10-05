@@ -1,13 +1,19 @@
-import ContactListItem from "components/ContactListItem/ContactListItem"
+import ContactListItem from "components/ContactListItem/ContactListItem";
 
-const ContactList = ({contacts, removeContact}) =>
-{
-  return (<>
+const ContactList = ({ contacts, removeContact }) => {
+  return (
+    <>
       <ul>
-      <ContactListItem contacts={contacts} removeContact={ removeContact} />
-    </ul>
-  </>
-  )
-}
+        {contacts.map((contact) => (
+          <ContactListItem
+            key={contact.id}
+            contact={contact}
+            removeContact={removeContact}
+          />
+        ))}
+      </ul>
+    </>
+  );
+};
 
-export default ContactList
+export default ContactList;
